@@ -115,12 +115,14 @@ telescope.setup({
             case_mode = "ignore_case",
         },
         project = {
-            base_dirs = {},
-            hidden_files = true, -- default: false
+            base_dirs = {
+                "~/Projects",
+            },
+            hidden_files = true,
             theme = "dropdown",
             order_by = "desc",
             search_by = "title",
-            sync_with_nvim_tree = false, -- default false
+            sync_with_nvim_tree = false,
         },
     },
 })
