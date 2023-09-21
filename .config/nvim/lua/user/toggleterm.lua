@@ -1,14 +1,13 @@
 local Terminal = require("toggleterm.terminal").Terminal
 
 require("toggleterm").setup({
-    open_mapping = [[<C-t>]],
+    open_mapping = [[<a-t>]],
     direction = "float",
     float_opts = {
         border = "double",
     },
 })
 
--- Docker
 local docker_tui = "lazydocker"
 
 local docker_client = Terminal:new({

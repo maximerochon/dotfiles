@@ -3,27 +3,42 @@ local cmp_ok, cmp = pcall(require, "cmp")
 local cmp_lsp_ok, cmp_lsp = pcall(require, "cmp_nvim_lsp")
 
 local servers = {
+    "angularls",
     "ansiblels",
     "arduino_language_server",
     "astro",
+    "awk_ls",
     "bashls",
     "cssls",
+    "docker_compose_language_service",
     "dockerls",
     "emmet_ls",
     "eslint",
     "golangci_lint_ls",
+    "gradle_ls",
+    "grammarly",
     "graphql",
+    "helm_ls",
     "html",
+    "jqls",
     "jsonls",
     "lua_ls",
+    "lemminx",
+    "mdx_analyzer",
+    "phpactor",
+    "powershell_es",
     "pyright",
     "rust_analyzer",
+    "sqlls",
     "svelte",
     "tailwindcss",
     "terraformls",
     "tflint",
     "tsserver",
+    "vale_ls",
+    "vimls",
     "vuels",
+    "yamlls",
 }
 
 local server_settings = {}
@@ -32,7 +47,6 @@ local lsp_flags = {
     debounce_text_changes = 150,
 }
 
--- Mappings.
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<leader>dv", vim.diagnostic.open_float, opts)
 vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_prev, opts)
@@ -40,10 +54,8 @@ vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_next, opts)
 vim.keymap.set("n", "<leader>dd", vim.diagnostic.setloclist, opts)
 
 local on_attach = function(client, bufnr)
-    -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-    -- Mappings.
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
@@ -64,7 +76,6 @@ local on_attach = function(client, bufnr)
     end, bufopts)
 end
 
--- capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = cmp_lsp.default_capabilities(capabilities)
 
