@@ -10,20 +10,23 @@ formatter.setup({
     logging = true,
     log_level = vim.log.levels.WARN,
     filetype = {
-        svelte = {
-            require("formatter.filetypes.svelte"),
+        css = {
+            require("formatter.filetypes.css").prettier,
         },
-        typescriptreact = {
-            require("formatter.filetypes.typescriptreact").prettier,
+        go = {
+            require("formatter.filetypes.go").goimports,
         },
-        typescript = {
-            require("formatter.filetypes.typescript").prettier,
+        graphql = {
+            require("formatter.filetypes.graphql").prettier,
         },
-        javascriptreact = {
-            require("formatter.filetypes.javascriptreact").prettier,
+        html = {
+            require("formatter.filetypes.html").prettier,
         },
         javascript = {
             require("formatter.filetypes.javascript").prettier,
+        },
+        javascriptreact = {
+            require("formatter.filetypes.javascriptreact").prettier,
         },
         json = {
             require("formatter.filetypes.json").prettier,
@@ -33,6 +36,30 @@ formatter.setup({
         },
         markdown = {
             require("formatter.filetypes.markdown").prettier,
+        },
+        php = {
+            require("formatter.filetypes.php").phpcbf,
+        },
+        python = {
+            require("formatter.filetypes.python").autopep8,
+        },
+        sh = {
+            require("formatter.filetypes.sh").shfmt,
+        },
+        svelte = {
+            require("formatter.filetypes.svelte"),
+        },
+        typescript = {
+            require("formatter.filetypes.typescript").prettier,
+        },
+        typescriptreact = {
+            require("formatter.filetypes.typescriptreact").prettier,
+        },
+        vue = {
+            require("formatter.filetypes.vue").prettier,
+        },
+        yaml = {
+            require("formatter.filetypes.yaml").prettier,
         },
     },
 })

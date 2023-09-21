@@ -45,7 +45,7 @@ return packer.startup(function(use)
     use("nvim-lua/popup.nvim")
     use("nvim-lua/plenary.nvim")
 
-    -- completion plugins
+    -- Completion plugins
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/cmp-buffer")
     use("hrsh7th/cmp-path")
@@ -53,27 +53,33 @@ return packer.startup(function(use)
     use("hrsh7th/nvim-cmp")
     use("saadparwaiz1/cmp_luasnip")
 
-    -- snippets
+    -- Snippets
     use("L3MON4D3/LuaSnip")
     use("rafamadriz/friendly-snippets")
 
-    -- lsp
+    -- LSP
     use("neovim/nvim-lspconfig")
     use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")
 
-    -- telescope
-    use("nvim-telescope/telescope.nvim")
+    -- Linter
+    use("mfussenegger/nvim-lint")
+
+    -- Telescope
+    use({ "nvim-telescope/telescope.nvim" })
     use("nvim-telescope/telescope-file-browser.nvim")
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
     use("nvim-telescope/telescope-project.nvim")
 
-    -- treesitter
+    -- Treesitter
     use("nvim-treesitter/nvim-treesitter")
 
-    -- autopairs
+    -- Autopairs
     use("windwp/nvim-autopairs")
     use("windwp/nvim-ts-autotag")
+
+    -- Surround
+    use("kylechui/nvim-surround")
 
     -- Git
     use("lewis6991/gitsigns.nvim")
@@ -84,10 +90,10 @@ return packer.startup(function(use)
     use("nvim-tree/nvim-web-devicons")
     use("nvim-tree/nvim-tree.lua")
 
-    -- tabline
+    -- Tabline
     use({ "crispgm/nvim-tabline", requires = { "nvim-tree/nvim-web-devicons" } })
 
-    -- lualine
+    -- Lualine
     use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
 
     -- Terminal
@@ -97,14 +103,11 @@ return packer.startup(function(use)
     -- Formatter
     use("mhartington/formatter.nvim")
 
-    -- neoclip
+    -- Neoclip
     use({ "AckslD/nvim-neoclip.lua", requires = { "kkharji/sqlite.lua", module = "sqlite" } })
 
     -- Comment
     use("numToStr/Comment.nvim")
-
-    -- surround
-    use("kylechui/nvim-surround")
 
     -- Kitty Conf Highlighting
     use("fladson/vim-kitty")
@@ -129,7 +132,7 @@ return packer.startup(function(use)
     -- Terraform
     use("hashivim/vim-terraform")
 
-    -- scrollbar
+    -- Scrollbar
     use("petertriho/nvim-scrollbar")
 
     -- Colorscheme
@@ -144,9 +147,6 @@ return packer.startup(function(use)
 
     -- Base64
     use("taybart/b64.nvim")
-
-    -- Distant
-    use("chipsenkbeil/distant.nvim")
 
     -- Arduino
     use({ "stevearc/vim-arduino" })
@@ -163,18 +163,6 @@ return packer.startup(function(use)
                 disable_legacy_commands = true,
             })
         end,
-    })
-
-    -- Dashboard
-    use({
-        "glepnir/dashboard-nvim",
-        event = "VimEnter",
-        config = function()
-            require("dashboard").setup({
-                -- config
-            })
-        end,
-        requires = { "nvim-tree/nvim-web-devicons" },
     })
 
     -- Automatically set up your configuration after cloning packer.nvim

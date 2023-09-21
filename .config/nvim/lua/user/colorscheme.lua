@@ -2,6 +2,7 @@ local colorscheme = "catppuccin-mocha"
 
 require("catppuccin").setup({
     transparent_background = true,
+    term_colors = true,
 })
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
