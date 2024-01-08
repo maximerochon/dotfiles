@@ -41,6 +41,14 @@ lualine.setup({
                 },
             },
             { arduino_status },
+            {
+                "swenv",
+                icon = "",
+                color = { fg = "#7CFC00" },
+                cond = function()
+                    return vim.bo.filetype == "python"
+                end,
+            },
         },
         lualine_x = { "tabnine" },
         lualine_y = { "encoding", "fileformat", "progress" },
