@@ -116,7 +116,7 @@ telescope.setup({
         },
         project = {
             base_dirs = {
-                "~/Projects",
+                "~/projects",
             },
             hidden_files = true,
             theme = "dropdown",
