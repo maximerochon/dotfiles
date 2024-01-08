@@ -7,6 +7,9 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.conceallevel = 0
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true
+vim.opt.list = true
+vim.opt.listchars:append("lead:⋅")
+vim.opt.listchars:append("eol:↴")
 vim.opt.mouse = "a"
 vim.opt.pumheight = 10
 vim.opt.showtabline = 2
