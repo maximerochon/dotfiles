@@ -131,6 +131,7 @@ telescope.load_extension("file_browser")
 telescope.load_extension("fzf")
 telescope.load_extension("project")
 telescope.load_extension("neoclip")
+telescope.load_extension("git_worktree")
 
 vim.keymap.set("n", "<leader>fd", ":Telescope file_browser path=%:p:h<CR>", {})
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
