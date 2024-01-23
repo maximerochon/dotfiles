@@ -167,7 +167,10 @@ return packer.startup(function(use)
     })
 
     -- Python venv
-    use 'AckslD/swenv.nvim'
+    use("AckslD/swenv.nvim")
+
+    -- To-Do comments
+    use({ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" } })
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
