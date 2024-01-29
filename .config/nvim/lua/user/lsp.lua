@@ -35,7 +35,6 @@ local servers = {
     "terraformls",
     "tflint",
     "tsserver",
-    "vale_ls",
     "vimls",
     "vuels",
     "yamlls",
