@@ -172,6 +172,20 @@ return packer.startup(function(use)
     -- To-Do comments
     use({ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" } })
 
+    -- Oil
+    use("stevearc/oil.nvim")
+
+    -- Harpoon
+    use("ThePrimeagen/harpoon")
+
+    -- Noice
+    use("rcarriga/nvim-notify")
+    -- use("MunifTanjim/nui.nvim")
+    use({ "folke/noice.nvim", requires = { "MunifTanjim/nui.nvim" } })
+
+    -- nvim-spectre
+    use("nvim-pack/nvim-spectre")
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then

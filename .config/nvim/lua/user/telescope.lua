@@ -132,8 +132,10 @@ telescope.load_extension("fzf")
 telescope.load_extension("project")
 telescope.load_extension("neoclip")
 telescope.load_extension("git_worktree")
+telescope.load_extension("harpoon")
 
 vim.keymap.set("n", "<leader>fd", ":Telescope file_browser path=%:p:h<CR>", {})
+vim.keymap.set("n", "<leader>fe", "<CMD>Telescope file_browser path=~<CR>", {})
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
@@ -141,3 +143,32 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 vim.keymap.set("n", "<leader>pp", ":Telescope project<CR>", {})
 vim.keymap.set("n", "<leader>nc", ":Telescope neoclip<CR>", {})
 vim.keymap.set("n", "<leader>fm", ":Telescope<CR>", {})
+
+vim.keymap.set("n", "<leader>ng", "<CMD>lua require('user/telescope').grep_notes()<CR>", {})
+vim.keymap.set("n", "<leader>nd", "<CMD>lua require('user/telescope').browse_notes()<CR>", {})
+
+local M = {}
+
+function M.grep_notes()
+  local opts = {}
+  opts.hidden = true
+  opts.search_dirs = {
+    "~/notes/",
+  }
+  opts.prompt_prefix = "   "
+  opts.prompt_title = " Grep Notes"
+  opts.path_display = { "smart" }
+  require("telescope.builtin").live_grep(opts)
+end
+
+function M.browse_notes()
+  require("telescope").extensions.file_browser.file_browser {
+    prompt_title = " Browse Notes",
+    prompt_prefix = " ﮷ ",
+    cwd = "~/notes/",
+    layout_strategy = "horizontal",
+    layout_config = { preview_width = 0.65, width = 0.75 },
+  }
+end
+
+return M
