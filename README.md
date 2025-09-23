@@ -1,62 +1,15 @@
-# dotfiles
+# Dotfiles
 
-## Tools to install for LSP
+This is a collection of configuration files and scripts that I use to customize my development environment.
 
-### Ansible
-npm install -g @ansible/ansible-language-server
+## Description
 
-### Arduino
-go install github.com/arduino/arduino-language-server@latest
+This repository contains configurations for various tools and applications, including i3, kitty terminal, neovim, polybar, and rofi. The neovim configuration is based on [LazyVim](https://github.com/LazyVim/LazyVim).
 
-### Astro
-npm install -g @astrojs/language-server
+## Configuration
 
-### Bash
-npm i -g bash-language-server
+You can customize the configurations by editing the files in the `.config` directory. For example, to change the keybindings in i3, modify the `.config/i3/config` file.
 
-### CSS
-npm i -g vscode-langservers-extracted
+---
 
-### Docker
-npm install -g dockerfile-language-server-nodejs
-
-### Emmet
-npm install -g emmet-ls
-
-### Eslint
-npm i -g vscode-langservers-extracted
-
-### Go
-go install github.com/nametake/golangci-lint-langserver@latest
-&& go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
-
-### Graphql
-npm install -g graphql-language-service-cli
-
-### HTML
-npm i -g vscode-langservers-extracted
-
-### JSON
-npm i -g vscode-langservers-extracted
-
-### LUA
-Install lua-language-server
-
-### Python
-npm install -g pyright
-
-### Svelte
-npm install -g svelte-language-server
-
-### Tailwindcss
-npm install -g @tailwindcss/language-server
-
-### Terraform
-Install terraform-ls, tflint
-
-### Typescript
-npm install -g typescript typescript-language-server
-
-### Vue
-npm install -g vls
-
+That's it! You now have a brief overview of my dotfiles repository. Feel free to explore the configurations and customize them to your liking.
