@@ -5,4 +5,12 @@ return {
     vim.g.strip_whitespace_on_save = 1
     vim.g.better_whitespace_filetypes_blacklist = { "diff", "gitcommit", "markdown" }
   end,
+  init = function()
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "SnacksDashboardOpened",
+      callback = function()
+        vim.cmd([[DisableWhitespace]])
+      end,
+    })
+  end,
 }
