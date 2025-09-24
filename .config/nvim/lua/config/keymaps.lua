@@ -23,6 +23,10 @@ map("v", "<Tab>", ">gv")
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
+-- Terminal
+map("t", "<leader><leader>", "<C-\\><C-n>", { silent = true })
+map("t", "<leader><leader>q", "<C-\\><C-n><CMD>close<CR>", { silent = true })
+
 local telescope = require("telescope")
 local builtin = require("telescope.builtin")
 
