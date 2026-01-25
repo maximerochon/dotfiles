@@ -1,0 +1,106 @@
+---
+$schema: https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+blocks:
+  - type: prompt
+    alignment: left
+    segments:
+      - type: path
+        style: plain
+        foreground: "#0CA0D8"
+        template: " \uf07b {{ .Path }} "
+        properties:
+          style: full
+          folder_separator_icon: /
+
+      - type: git
+        style: plain
+        foreground: "#22C55E"
+        foreground_templates:
+          - "{{ if or (.Working.Changed) (.Staging.Changed) }}#FACC15{{ end }}"
+        template:
+          "{{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus
+          }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and
+          (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}
+           {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{
+          end }}"
+        properties:
+          fetch_status: true
+          fetch_upstream_icon: true
+          fetch_push_status: true
+
+  - type: prompt
+    alignment: right
+    segments:
+      - type: go
+        style: plain
+        foreground: "#FFFFFF"
+        background: "#7FD5EA"
+        template: "  {{ .Full }} "
+
+      - type: java
+        style: plain
+        foreground: "#FFFFFF"
+        background: "#4063D8"
+        template: "  {{ .Full }}"
+
+      - type: node
+        style: plain
+        foreground: "#FFFFFF"
+        background: "#6CA35E"
+        template: "  {{ .Full }} "
+
+      - type: php
+        style: plain
+        foreground: "#FFFFFF"
+        background: "#4063D8"
+        template: "  {{ .Full }} "
+
+      - type: python
+        style: plain
+        foreground: "#FFD43B"
+        background: "#306998"
+        template: "  {{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }} "
+
+      - type: rust
+        style: plain
+        foreground: "#193549"
+        background: "#99908A"
+        template: "  {{ .Full }} "
+
+      - type: kubectl
+        style: plain
+        foreground: "#326CE5"
+        template: " 󱃾 {{.Cluster}} | {{if .Namespace}}{{.Namespace}}{{else}}default{{end}}"
+        properties:
+          display_error: false
+
+      - type: executiontime
+        style: plain
+        foreground: "#A0A0A0"
+        template: " \uf252 {{ .FormattedMs }} "
+        properties:
+          threshold: 500
+
+      - type: status
+        style: plain
+        foreground: "#EF4444"
+        foreground_templates:
+          - "{{ if eq .Code 0 }}#22C55E{{ end }}"
+        template: " {{if ne .Code 0}}\uf00d {{ .Code }}{{else}}\uf00c{{end}} "
+        properties:
+          always_enabled: true
+
+  - type: prompt
+    alignment: left
+    newline: true
+    segments:
+      - type: root
+        style: plain
+        foreground: "#CD5E42"
+        template: "\ue3bf "
+
+      - type: text
+        style: plain
+        foreground: "#22C55E"
+        template: "# "
