@@ -16,6 +16,18 @@ map("n", "<A-Up>", ":m .-2<CR>==")
 map("v", "<A-Down>", ":move '>+1<CR>gv-gv")
 map("v", "<A-Up>", ":move '<-2<CR>gv-gv")
 
+-- Window navigation with Ctrl+Arrow keys
+map("n", "<C-Left>", "<C-w>h", { desc = "Move to left window" })
+map("n", "<C-Right>", "<C-w>l", { desc = "Move to right window" })
+map("n", "<C-Up>", "<C-w>k", { desc = "Move to upper window" })
+map("n", "<C-Down>", "<C-w>j", { desc = "Move to lower window" })
+
+-- Window resizing with Alt+Shift+Arrow keys
+map("n", "<A-S-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+map("n", "<A-S-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+map("n", "<A-S-Up>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+map("n", "<A-S-Down>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+
 -- Tab key
 map("i", "<S-Tab>", "<C-d>")
 map("v", "<S-Tab>", "<gv")
