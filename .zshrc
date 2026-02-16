@@ -104,5 +104,8 @@ source $ZSH/oh-my-zsh.sh
 # export TIMER_PRECISION=2
 
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh --config ~/oh-my-posh.yaml)"
+  eval "$(oh-my-posh init zsh --config ~/.oh-my-posh.yaml)"
 fi
+
+# Override OMZ anchor-based completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
